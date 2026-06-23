@@ -16,30 +16,32 @@ export default function DashboardPeminjam() {
   }
 
   async function cekEligibilitas() {
-    setLoading(true);
-    try {
-      const contract = await getContract();
-      const result = await contract.isVerifiedEligible(walletAddress);
-      setStatus(result ? "✅ Kamu eligible untuk meminjam!" : "❌ Kamu belum eligible.");
-    } catch (err) {
-      setStatus("Error: " + err.message);
-    }
-    setLoading(false);
+  setLoading(true);
+  try {
+    const contract = await getContract();
+    const address = await getWalletAddress();
+    const result = await contract.isVerifiedEligible(address);
+    setStatus(result ? "✅ Kamu eligible untuk meminjam!" : "❌ Kamu belum eligible.");
+  } catch (err) {
+    setStatus("Error: " + err.message);
   }
+  setLoading(false);
+}
 
   async function submitProof() {
-    setLoading(true);
-    try {
-      const contract = await getContract();
-      const proof = ethers.toUtf8Bytes("dummy-proof");
-      const tx = await contract.submitCreditProof(proof, [1]);
-      await tx.wait();
-      setStatus("✅ Proof berhasil disubmit! Tx: " + tx.hash);
-    } catch (err) {
-      setStatus("Error: " + err.message);
-    }
-    setLoading(false);
+  setLoading(true);
+  try {
+    const contract = await getContract();
+    const proof = new Uint8Array([1, 2, 3, 4]);
+    const publicInputs = [BigInt(1)];
+    const tx = await contract.submitCreditProof(proof, publicInputs);
+    await tx.wait();
+    setStatus("✅ Proof berhasil disubmit! Tx: " + tx.hash);
+  } catch (err) {
+    setStatus("Error: " + err.message);
   }
+  setLoading(false);
+}
 
   return (
     <div style={{ maxWidth: "860px", margin: "0 auto", padding: "2rem" }}>

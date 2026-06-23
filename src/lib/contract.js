@@ -1,8 +1,7 @@
 import { ethers } from "ethers";
 import KilauDeFiABI from "../abi/KilauDeFi.json";
 
-const CONTRACT_ADDRESS = "0xFeA818b263D3500806135043f827B74bd2c16FF";
-
+const CONTRACT_ADDRESS = "0xFeA818b263D35000806135043f827B74bd2c16FF";
 export async function getContract() {
   if (!window.ethereum) {
     alert("MetaMask tidak ditemukan! Silakan install MetaMask dulu.");
