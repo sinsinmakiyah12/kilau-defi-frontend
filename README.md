@@ -1,16 +1,20 @@
-# React + Vite
+**KILAU DeFi**
+    Platform Decentralized Finance (DeFi) untuk verifikasi skor kredit berbasis Zero-Knowledge Proof (ZKP). Proyek ini memungkinkan validasi kelayakan kredit nasabah tanpa mengungkap data sensitif ke publik.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Fitur Utama**
+ZKP Verification: Validasi skor kredit secara privasi tanpa mengekspos data pribadi.
+Admin Control: Fitur untuk mengelola batas minimum skor kredit secara aman di blockchain.
+Smart Contract: Logika transaksi dan verifikasi yang terdesentralisasi.
+Responsive Frontend: Antarmuka modern dengan integrasi MetaMask.
 
-Currently, two official plugins are available:
+**Struktur Proyek**
+`src/`: Berisi seluruh logika antarmuka dan integrasi frontend.
+`kilau-backend/`: Berisi logika sirkuit ZKP dan Smart Contract.
+`public/`: Assets dan file statis aplikasi.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Cara Menjalankan Aplikasi**
+Pastikan Node.js sudah terinstall di perangkat.
+1. Clone Repository
+   ```bash
+   git clone [https://github.com/sinsinmakiyah12/kilau-defi-frontend]
+   cd kilau-defi-frontend
